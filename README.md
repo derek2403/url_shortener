@@ -1,24 +1,31 @@
-# README
+# URL Shortener
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple URL shortener service built with Ruby on Rails that allows users to create shortened URLs and track their usage statistics.
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+- Create shortened URLs from long URLs
+- Track visit statistics including:
+  - Number of clicks
+  - Visit timestamps
+  - Visitor locations (based on IP)
+  - Visitor IP addresses
+- View all shortened URLs in a list
+- Automatic title extraction from target URLs
 
-* System dependencies
+## Technical Details
 
-* Configuration
+- Built with Ruby on Rails 7.1
+- Uses JSON files for data storage (no database required)
+- Minimal styling with pure CSS
+- Geocoding for visitor location detection
 
-* Database creation
+## Requirements
 
-* Database initialization
+- Ruby 3.2.2
+- Rails 7.1.0
+- Node.js (for asset compilation)
 
-* How to run the test suite
+## Installation
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Clone the repository:
