@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
     <% if notice %>
-      <div><%= notice %></div>
+      <div class="notice"><%= notice %></div>
     <% end %>
     
     <% if alert %>
-      <div><%= alert %></div>
+      <div class="alert"><%= alert %></div>
     <% end %>
 
     <%= yield %>
