@@ -1,0 +1,36 @@
+<div class="container mx-auto px-4 py-8">
+  <h1 class="text-3xl font-bold mb-8">URL Statistics</h1>
+
+  <div class="bg-white shadow rounded-lg p-6">
+    <h2 class="text-xl font-semibold"><%= @url.title %></h2>
+    <div class="mt-2 text-gray-600">
+      <p>Original URL: <%= link_to @url.target_url, @url.target_url, target: "_blank", class: "text-blue-600 hover:underline" %></p>
+      <p>Short URL: <%= link_to visit_url(@url.short_path), visit_url(@url.short_path), target: "_blank", class: "text-blue-600 hover:underline" %></p>
+      <p>Total Clicks: <%= @visits.count %></p>
+    </div>
+
+    <div class="mt-6">
+      <h3 class="text-lg font-semibold mb-4">Visit History</h3>
+      <div class="overflow-x-auto">
+        <table class="min-w-full divide-y divide-gray-200">
+          <thead>
+            <tr>
+              <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Time</th>
+              <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Location</th>
+              <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">IP Address</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-200">
+            <% @visits.each do |visit| %>
+              <tr>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><%= visit.created_at %></td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><%= visit.location %></td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><%= visit.ip_address %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div> 
