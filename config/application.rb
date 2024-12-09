@@ -3,7 +3,7 @@ require_relative "boot"
 # Remove require "rails/all" and explicitly require what we need
 require "rails"
 
-# Include each railties manually, EXCEPT activerecord
+# Include each railties manually, EXCEPT activerecord and activestorage
 %w(
   action_controller/railtie
   action_view/railtie

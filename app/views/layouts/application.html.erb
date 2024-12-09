@@ -10,14 +10,24 @@
   </head>
 
   <body>
-    <% if notice %>
-      <div class="notice"><%= notice %></div>
-    <% end %>
-    
-    <% if alert %>
-      <div class="alert"><%= alert %></div>
-    <% end %>
+    <nav class="navbar">
+      <div class="nav-brand">URL Shortener</div>
+      <div class="nav-links">
+        <%= link_to "New URL", new_url_path, class: "nav-link" %>
+        <%= link_to "All URLs", urls_path, class: "nav-link" %>
+      </div>
+    </nav>
 
-    <%= yield %>
+    <main class="content">
+      <% if notice %>
+        <div class="notice"><%= notice %></div>
+      <% end %>
+      
+      <% if alert %>
+        <div class="alert"><%= alert %></div>
+      <% end %>
+
+      <%= yield %>
+    </main>
   </body>
 </html>
